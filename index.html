@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>i-vue-ui</title>
+  <title>i-vue-ui</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    :root{
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #999;
+      --border-color: #999;
+      --border-color-hover:#666;
+    }
+  </style>
+
+
+  <style>
+
+    body{
+      margin: 20px;
+      font-size: 16px;
+    }
+    .i-button{
+      height: var(--button-height);
+      font-size: var(--font-size);
+      padding: 0 1em;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      background: var(--button-bg);
+    }
+
+    .i-button:hover{
+      border: 1px solid var(--border-color-hover);
+    }
+    .i-button:active{
+      border: 1px solid var(--border-color-active);
+    }
+    .i-button:focus{
+      outline: none;;
+    }
+  </style>
 </head>
+
 <body>
 	<div id="app">
-		{{message}}
-	</div>
-	<script src="./node_modules/vue/dist/vue.js"></script>
+    <i-button>button</i-button>
+  </div>
+  
+	<script src="node_modules/vue/dist/vue.js"></script>
+	<script src="button.js"></script>
+
 	<script>
 		let app = new Vue({
 			el: '#app',
-			data:{
+			data: {
 				message: 'init'
 			}
 		})
 	</script>
 </body>
+
 </html>
